@@ -1,0 +1,2 @@
+g++ -g -Wall -std=c++11 -I/usr/local -I/usr/include/SOIL -I../common -I./include `pkg-config --cflags glfw3` `pkg-config --cflags opencv` `pkg-config --cflags freetype2` ./source/shaders.cpp -c -o shaders.o
+g++ -g -Wall -std=c++11 -I/usr/local -I/usr/include/SOIL -I../common -I./include `pkg-config --cflags glfw3` `pkg-config --cflags opencv` `pkg-config --cflags freetype2` ./main.cpp -o main shaders.o -lm -L/usr/local/lib -lGL -lGLU -lGLEW -lSOIL `pkg-config --static --libs glfw3` `pkg-config --libs opencv` `pkg-config --libs freetype2`

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="include">
+        <in>axes3d.h</in>
+        <in>camera.h</in>
+        <in>de_casteljau_bcurve.h</in>
+        <in>freetype.h</in>
+        <in>helpers.h</in>
+        <in>line.h</in>
+        <in>point.h</in>
+        <in>render_object.h</in>
+        <in>window.h</in>
+        <in>xcurve.h</in>
+      </df>
+      <df name="source">
+        <in>shaders.cpp</in>
+        <in>texture.cpp</in>
+      </df>
+      <in>main.cpp</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+    </logicalFolder>
+    <itemPath>help</itemPath>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-std=c++11"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath>main</executablePath>
+          <ccTool>
+            <incDir>
+              <pElem>/usr/local</pElem>
+              <pElem>/usr/include/SOIL</pElem>
+              <pElem>../common</pElem>
+              <pElem>include</pElem>
+              <pElem>/usr/local/include</pElem>
+              <pElem>/usr/local/include/opencv</pElem>
+              <pElem>/usr/local/include/freetype2</pElem>
+              <pElem>/usr/include/libpng12</pElem>
+            </incDir>
+          </ccTool>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <folder path="0/source">
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <item path="include/axes3d.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/camera.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/de_casteljau_bcurve.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/freetype.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/helpers.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/line.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/point.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/render_object.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/window.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/xcurve.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="source/shaders.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
+      <item path="source/texture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

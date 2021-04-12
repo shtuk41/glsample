@@ -1,0 +1,7 @@
+g++ -g -Wall -I/usr/local -I/usr/include/SOIL -I../common `pkg-config --cflags glfw3` `pkg-config --cflags opencv` ../../main.cpp ../../shader.cpp ../../texture.cpp ../../controls.cpp -o main -lm -L/usr/local/lib -lGL -lGLU -lGLEW -lSOIL `pkg-config --static --libs glfw3` `pkg-config --libs opencv`
+g++: error: ../../main.cpp: No such file or directory
+g++: error: ../../shader.cpp: No such file or directory
+g++: error: ../../texture.cpp: No such file or directory
+g++: error: ../../controls.cpp: No such file or directory
+Makefile:11: recipe for target 'main' failed
+make: *** [main] Error 1

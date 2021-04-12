@@ -72,7 +72,7 @@ GLuint loadImageToTexture(const char * imagePath)
 	GLuint textureID = 0;
 	//Load the images and convert them to RGBA format
 
-	unsigned char *image = SOIL_load_image(imagePath, &width, &height, &channels, SOIL_LOAD_RGBA);
+        unsigned char *image = SOIL_load_image(imagePath, &width, &height, &channels, SOIL_LOAD_RGBA);
 
 	if (!image)
 	{
@@ -81,7 +81,7 @@ GLuint loadImageToTexture(const char * imagePath)
 	}
 
 	std::cout << "Loaded Image: " << width << " x " << height << " - " << channels << " channels" << std::endl;
-	textureID = initializeTexture(image, width, height, GL_RGBA);
+        textureID = initializeTexture(image, width, height, GL_RGBA);
 	SOIL_free_image_data(image);
 	return textureID;
 }

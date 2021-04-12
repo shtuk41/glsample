@@ -22,8 +22,8 @@ using namespace glm;
 
 GLFWwindow* g_window;
 
-const int WINDOWS_WIDTH = 640;
-const int WINDOWS_HEIGHT = 480;
+const int WINDOWS_WIDTH = 480;
+const int WINDOWS_HEIGHT = 272;
 float aspect_ratio = 3.0f/2.0f;
 float z_offset =0.0f;
 float rotateY = 0.0f;
@@ -202,11 +202,19 @@ int main(int argc, char **argv)
 
 
         //LOD image to texture
-        char *filename = "texture.png";
-        GLuint texture_id = loadImageToTexture(filename);
+        //char *filename = "texture.png";
+
+        GLuint texture_id_1 = loadImageToTexture("image1.bmp");
+        GLuint texture_id_2 = loadImageToTexture("image2.bmp");
+        GLuint texture_id_3 = loadImageToTexture("image3.bmp");
+        GLuint texture_id_4 = loadImageToTexture("image4.bmp");
+        GLuint texture_id_5 = loadImageToTexture("image5.bmp");
+        GLuint texture_id_6 = loadImageToTexture("image6.bmp");
 
 
-        if (!texture_id)
+
+
+        if (!texture_id_1 || !texture_id_2 || !texture_id_3 ||!texture_id_4 || !texture_id_5 || !texture_id_6)
         {
             glfwTerminate();
             return 0;
@@ -247,11 +255,56 @@ int main(int argc, char **argv)
         
 
         glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, texture_id);
+        glBindTexture(GL_TEXTURE_2D, texture_id_1);
+
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture_id_2);
+
+        glActiveTexture(GL_TEXTURE2);
+        glBindTexture(GL_TEXTURE_2D, texture_id_3);
+
+        glActiveTexture(GL_TEXTURE3);
+        glBindTexture(GL_TEXTURE_2D, texture_id_4);
+
+        glActiveTexture(GL_TEXTURE4);
+        glBindTexture(GL_TEXTURE_2D, texture_id_5);
+
+        glActiveTexture(GL_TEXTURE5);
+        glBindTexture(GL_TEXTURE_2D, texture_id_6);
+
+        int run = 0;
 
 
         do
         {
+                switch (run)
+                {
+                    case 0:
+                    glUniform1i(texture_sampler_id, 0);
+                    run = 1;
+                    break;
+                    case 1:
+                    glUniform1i(texture_sampler_id, 1);
+                    run = 2;
+                    break;
+                    case 2:
+                    glUniform1i(texture_sampler_id, 2);
+                    run = 3;
+                    break;
+                    case 3:
+                    glUniform1i(texture_sampler_id, 3);
+                    run = 4;
+                    break;
+                    case 4:
+                    glUniform1i(texture_sampler_id, 4);
+                    run = 5;
+                    break;
+                    case 5:
+                    glUniform1i(texture_sampler_id, 5);
+                    run = 0;
+                    break;
+                }
+
                  glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
                  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -272,6 +325,8 @@ int main(int argc, char **argv)
                  glUniformMatrix4fv(matrix_id,1,GL_FALSE, &mvp[0][0]);
                  glDrawArrays(GL_TRIANGLES, 0, 6);
 
+
+
                  //swap buffers
 
                  glfwSwapBuffers(g_window);
@@ -289,7 +344,9 @@ int main(int argc, char **argv)
         glDeleteBuffers(1, &vertex_buffer);
         glDeleteBuffers(1, &uv_buffer);
         glDeleteProgram(program_id);
-        glDeleteTextures(1, &texture_id);
+        glDeleteTextures(1, &texture_id_1);
+        glDeleteTextures(1, &texture_id_2);
+        glDeleteTextures(1, &texture_id_3);
         glDeleteVertexArrays(1, &vertex_array_id);
         // Close OpenGL window and terminate GLFW
         glfwDestroyWindow(g_window);
